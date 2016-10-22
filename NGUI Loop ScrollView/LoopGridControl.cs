@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 /// <summary>
 /// 循環Grid控制
@@ -118,9 +118,22 @@ public abstract class LoopGridControl : UIControlBase
     /// <summary>
     /// 設定資料
     /// </summary>
-    public void SetData(List<object> list, bool resetPosition)
+    public void SetData<T>(List<T> list, bool resetPosition)
     {
-        DataList = list;
+        if (DataList == null)
+        {
+            DataList = new List<object>();
+        }
+
+        DataList.Clear();
+
+        if (!list.isNullOrEmpty())
+        {
+            for (int x = 0, count = list.Count; x < count; x++)
+            {
+                DataList.Add(list[x]);
+            }
+        }
 
         if (resetPosition)
         {
@@ -136,7 +149,7 @@ public abstract class LoopGridControl : UIControlBase
     /// </summary>
     protected void ResetGrid()
     {
-        CurrentFirstIndex = GameDataSystem.NUMBER_ZERO;
+        CurrentFirstIndex = 0;
         UpdateMaxFirstIndex();
 
         ScrollView.DisableSpring();
@@ -153,7 +166,7 @@ public abstract class LoopGridControl : UIControlBase
     {
         int count = DataList == null ? MinFirstIndex : DataList.Count;
 
-        if (CurrentFirstIndex > GameDataSystem.NUMBER_ZERO && CurrentFirstIndex >= count)
+        if (CurrentFirstIndex > 0 && CurrentFirstIndex >= count)
         { 
             CurrentFirstIndex = count - 1;
             SetScrollViewPosition(CurrentFirstIndex);
@@ -205,7 +218,7 @@ public abstract class LoopGridControl : UIControlBase
         // 位移量
         int movement = Mathf.CeilToInt((float)Mathf.Abs(diff) / Items.Count) * Items.Count;
 
-        if (diff > GameDataSystem.NUMBER_ZERO)
+        if (diff > 0)
         {
             MoveItemToEnd(CurrentFirstIndex + diff - 2, movement);
         }
@@ -264,10 +277,23 @@ public abstract class LoopGridControl : UIControlBase
     {
         item.IndexProperty = index;
 
-        bool isNull = DataList == null || index < GameDataSystem.NUMBER_ZERO || index >= DataList.Count;
+        bool isNull = DataList == null || index < 0 || index >= DataList.Count;
         item.SetData(isNull ? null : DataList[index]);
         item.SetActive(!isNull);
 
         UpdateItemPosition(item, index);
+    }
+
+    /// <summary>
+    /// 清除Item資料 關閉介面時用
+    /// </summary>
+    protected virtual void ClearItemData()
+    {
+        if (Items.isNullOrEmpty()) return;
+
+        for (int x = 0, count = Items.Count; x < count; x++)
+        {
+            Items[x].ClearData();
+        }
     }
 }
