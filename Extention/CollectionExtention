@@ -62,12 +62,10 @@ public static class CollectionExtention
 
         Dictionary<K, V>.Enumerator enumarator = dic.GetEnumerator();
         List<V> list = new List<V>();
-        V data;
 
         while (enumarator.MoveNext())
         {
-            data = enumarator.Current.Value;
-            list.Add(data);
+            list.Add(enumarator.Current.Value);
         }
 
         return list;
@@ -82,12 +80,10 @@ public static class CollectionExtention
 
         Dictionary<K, V>.Enumerator enumarator = dic.GetEnumerator();
         List<R> list = new List<R>();
-        V data;
 
         while (enumarator.MoveNext())
         {
-            data = enumarator.Current.Value;
-            list.Add(action(data));
+            list.Add(action(enumarator.Current.Value));
         }
 
         return list;
