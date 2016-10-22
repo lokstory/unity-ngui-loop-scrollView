@@ -72,4 +72,24 @@ public static class CollectionExtention
 
         return list;
     }
+
+    /// <summary>
+    /// 將Dictionary值轉換成List 並對資料做轉型委派
+    /// </summary>
+    public static List<R> ConvertAndCastToList<K, V, R>(this Dictionary<K, V> dic, System.Func<V, R> action)
+    {
+        if (dic == null) return null;
+
+        Dictionary<K, V>.Enumerator enumarator = dic.GetEnumerator();
+        List<R> list = new List<R>();
+        V data;
+
+        while (enumarator.MoveNext())
+        {
+            data = enumarator.Current.Value;
+            list.Add(action(data));
+        }
+
+        return list;
+    }
 }
