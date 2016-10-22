@@ -53,6 +53,23 @@ public static class CollectionExtention
     }
 
     /// <summary>
+    /// 將Dictionary值轉換成List 並對資料做轉型委派
+    /// </summary>
+    public static List<R> CastList<T, R>(this List<T> list, System.Func<T, R> castAction)
+    {
+        if (list == null) return null;
+
+        List<R> resultList = new List<R>();
+
+        for (int x = 0, count = list.Count; x < count; x++)
+        {
+            resultList.Add(castAction(list[x]));
+        }
+
+        return resultList;
+    }
+
+    /// <summary>
     /// 將Dictionary值轉換成List
     /// </summary>
     /// <returns></returns>
@@ -74,7 +91,7 @@ public static class CollectionExtention
     /// <summary>
     /// 將Dictionary值轉換成List 並對資料做轉型委派
     /// </summary>
-    public static List<R> ConvertAndCastToList<K, V, R>(this Dictionary<K, V> dic, System.Func<V, R> action)
+    public static List<R> ConvertAndCastToList<K, V, R>(this Dictionary<K, V> dic, System.Func<V, R> castAction)
     {
         if (dic == null) return null;
 
@@ -83,7 +100,7 @@ public static class CollectionExtention
 
         while (enumarator.MoveNext())
         {
-            list.Add(action(enumarator.Current.Value));
+            list.Add(castAction(enumarator.Current.Value));
         }
 
         return list;
