@@ -58,6 +58,8 @@ public static class CollectionExtention
     /// <returns></returns>
     public static List<V> ConvertToList<K, V>(this Dictionary<K, V> dic)
     {
+        if (dic == null) return null;
+
         Dictionary<K, V>.Enumerator enumarator = dic.GetEnumerator();
         List<V> list = new List<V>();
         V data;
@@ -67,6 +69,7 @@ public static class CollectionExtention
             data = enumarator.Current.Value;
             list.Add(data);
         }
-        return null;
+
+        return list;
     }
 }
