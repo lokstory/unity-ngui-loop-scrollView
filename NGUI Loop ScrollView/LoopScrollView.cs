@@ -36,7 +36,6 @@ public class LoopScrollView : UIScrollView
     /// <summary>
     /// Avoid use late update in LoopGridControl
     /// </summary>
-    /// <param name="relative"></param>
     public override void MoveRelative(Vector3 relative)
     {
         base.MoveRelative(relative);
