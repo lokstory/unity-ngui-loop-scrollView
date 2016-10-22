@@ -53,7 +53,6 @@ public abstract class LoopGridControl : UIControlBase
     /// Grid最大第一個顯示的編號
     /// </summary>
     private int MaxFirstIndex = 0;
-
     /// <summary>
     /// 設定ScrollView位置
     /// </summary>
@@ -92,7 +91,6 @@ public abstract class LoopGridControl : UIControlBase
     {
         if (string.IsNullOrEmpty(PrefabPath)) return;
 
-        GameObject prefab = Resources.Load(string.Concat(GameDataSystem.UI_PATH_BATH, PrefabPath)) as GameObject;
 
         if (prefab == null) return;
 
