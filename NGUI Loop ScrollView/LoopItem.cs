@@ -28,7 +28,7 @@ public abstract class LoopItem : MonoBehaviour
 
     protected virtual void Awake()
     {
-        Transform = this.GetComponent<Transform>();
+        Transform = GetComponent<Transform>();
     }
 
     /// <summary>
