@@ -44,7 +44,7 @@ public abstract class LoopGridControl : UIControlBase
     /// <summary>
     /// 資料列表
     /// </summary>
-    protected List<object> DataList = null;
+    protected List<object> DataList = new List<object>();
     /// <summary>
     /// Grid最小第一個顯示的編號
     /// </summary>
@@ -118,11 +118,6 @@ public abstract class LoopGridControl : UIControlBase
     /// </summary>
     public void SetData<T>(List<T> list, bool resetPosition)
     {
-        if (DataList == null)
-        {
-            DataList = new List<object>();
-        }
-
         DataList.Clear();
 
         if (!list.isNullOrEmpty())
