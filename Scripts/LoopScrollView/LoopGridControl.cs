@@ -53,6 +53,7 @@ public abstract class LoopGridControl : MonoBehaviour
     /// Grid最大第一個顯示的編號
     /// </summary>
     private int MaxFirstIndex = 0;
+
     /// <summary>
     /// 設定ScrollView位置
     /// </summary>
@@ -91,6 +92,7 @@ public abstract class LoopGridControl : MonoBehaviour
     {
         if (string.IsNullOrEmpty(PrefabPath)) return;
 
+        GameObject prefab = Resources.Load(string.Concat(GameDataSystem.UI_PATH_BATH, PrefabPath)) as GameObject;
 
         if (prefab == null) return;
 
@@ -175,7 +177,7 @@ public abstract class LoopGridControl : MonoBehaviour
     private void UpdateMaxFirstIndex()
     {
         MaxFirstIndex = DataList == null ? MinFirstIndex : DataList.Count - 1;
-        MaxFirstIndex = MaxFirstIndex > VisibleCount ? MaxFirstIndex - VisibleCount : MaxFirstIndex;
+        MaxFirstIndex = MaxFirstIndex > VisibleCount ? MaxFirstIndex - VisibleCount : MinFirstIndex;
     }
 
     /// <summary>
@@ -198,6 +200,7 @@ public abstract class LoopGridControl : MonoBehaviour
     {
         // 目前第一個Item ID
         int index = GetCurrentIndex();
+
         // 限制在最大最小範圍
         index = index < MinFirstIndex ? MinFirstIndex : index > MaxFirstIndex ? MaxFirstIndex : index;
         // 拖曳限制
