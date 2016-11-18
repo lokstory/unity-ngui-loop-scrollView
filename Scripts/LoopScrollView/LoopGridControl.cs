@@ -3,7 +3,7 @@ using System.Collections.Generic;
 /// <summary>
 /// 循環Grid控制
 /// </summary>
-public abstract class LoopGridControl : UIControlBase
+public abstract class LoopGridControl : MonoBehaviour
 {
     /// <summary>
     /// 預製物路徑
