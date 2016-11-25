@@ -13,7 +13,7 @@
 
 2. Download, unzip, then copy files to Unity **Assets** folder.
 
-3. Modify NGUI **UIScrollView.cs** , add **virtual** keyword to **Press** and **RestrictWithinBounds** void like below.
+3. Modify **UIScrollView.cs** , add **virtual** keyword to **Press** and **RestrictWithinBounds** void like below.
 
 	> public virtual void Press (bool pressed)
 
@@ -33,7 +33,3 @@
     
 3. Your custom **controller** must **inherit** VerticalLoopGridControl or HorizontalLoopGridControl.
 	Don't forget **drag** components to **inspector** and set prefab **path**.
-
-
-
-
