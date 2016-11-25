@@ -1,7 +1,11 @@
 
 ## Hello, world! Make a good game :)
 
+
 ![](/Screen.png) ![](/Hierarchy.png)
+
+
+
 
 ## Quick Start
 
@@ -18,6 +22,8 @@
 4. Open **TestScene** and play it!
 
 
+
+
 ## Summary
 
 1. Use **LoopScrollView.cs** instead of **UIScrollView.cs**.
@@ -27,3 +33,7 @@
     
 3. Your custom **controller** must **inherit** VerticalLoopGridControl or HorizontalLoopGridControl.
 	Don't forget **drag** components to **inspector** and set prefab **path**.
+
+
+
+
