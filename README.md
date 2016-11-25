@@ -28,8 +28,8 @@
 
 1. Use **LoopScrollView.cs** instead of **UIScrollView.cs**.
 
-2. Set **UIGrid** position top and center horizontal(**↑**)  for **vertical** scroll view, 
-	left and center vertical(**←**)  for **horizontal** scroll view.
+2. Set **UIGrid** position topmost and center horizontal(**↑**)  for **vertical** scroll view, 
+	leftmost and center vertical(**←**)  for **horizontal** scroll view.
     
 3. Your custom **controller** must **inherit** VerticalLoopGridControl or HorizontalLoopGridControl.
 	Don't forget **drag** components to **inspector** and set prefab **path**.
