@@ -3,7 +3,7 @@
 
 ![](/Screen.png)
 
-1. Import NGUI before use.
+1. Import [NGUI](https://www.assetstore.unity3d.com/en/#!/content/2413) before use.
 
 2. Download, unzip, then copy to unity Assets folder.
 
