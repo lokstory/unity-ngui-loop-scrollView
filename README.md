@@ -7,7 +7,7 @@
 
 2. Download, unzip, then copy files to Unity Assets folder.
 
-3. Modify NGUI UIScrollView.cs , add **_virtual_** keyword to Press and RestrictWithinBounds void like below.
+3. Modify NGUI UIScrollView.cs , add **virtual** keyword to Press and RestrictWithinBounds void like below.
 
 	public virtual void Press (bool pressed)
 
