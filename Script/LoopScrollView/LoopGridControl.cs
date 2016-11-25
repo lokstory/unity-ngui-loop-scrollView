@@ -3,7 +3,7 @@ using System.Collections.Generic;
 /// <summary>
 /// 循環Grid控制
 /// </summary>
-public abstract class LoopGridControl : UIControlBase
+public abstract class LoopGridControl : MonoBehaviour
 {
     /// <summary>
     /// 預製物路徑
@@ -53,6 +53,7 @@ public abstract class LoopGridControl : UIControlBase
     /// Grid最大第一個顯示的編號
     /// </summary>
     private int MaxFirstIndex = 0;
+
     /// <summary>
     /// 設定ScrollView位置
     /// </summary>
@@ -91,6 +92,7 @@ public abstract class LoopGridControl : UIControlBase
     {
         if (string.IsNullOrEmpty(PrefabPath)) return;
 
+        GameObject prefab = Resources.Load(PrefabPath) as GameObject;
 
         if (prefab == null) return;
 
@@ -175,7 +177,7 @@ public abstract class LoopGridControl : UIControlBase
     private void UpdateMaxFirstIndex()
     {
         MaxFirstIndex = DataList == null ? MinFirstIndex : DataList.Count - 1;
-        MaxFirstIndex = MaxFirstIndex > VisibleCount ? MaxFirstIndex - VisibleCount : MaxFirstIndex;
+        MaxFirstIndex = MaxFirstIndex > VisibleCount ? MaxFirstIndex - VisibleCount : MinFirstIndex;
     }
 
     /// <summary>
@@ -198,6 +200,7 @@ public abstract class LoopGridControl : UIControlBase
     {
         // 目前第一個Item ID
         int index = GetCurrentIndex();
+
         // 限制在最大最小範圍
         index = index < MinFirstIndex ? MinFirstIndex : index > MaxFirstIndex ? MaxFirstIndex : index;
         // 拖曳限制

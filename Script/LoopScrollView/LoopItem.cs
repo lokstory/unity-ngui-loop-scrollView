@@ -45,4 +45,11 @@ public abstract class LoopItem : MonoBehaviour
     /// 設定資料
     /// </summary>
     public abstract void SetData<T>(T data);
+
+    /// <summary>
+    /// 清除資料
+    /// </summary>
+    public virtual void ClearData()
+    {
+    }
 }
