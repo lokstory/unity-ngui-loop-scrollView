@@ -1,7 +1,7 @@
 
 ## Hello, world!
 
-![](/Screen.png)
+![](/Screen.png) ![](/Hierarchy.png)
 
 1. Import [NGUI](https://www.assetstore.unity3d.com/en/#!/content/2413) before use.
 
