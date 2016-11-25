@@ -1,7 +1,7 @@
 
 ## Hello, world!
 
-![](/Capture.png)
+![](/Screen.png)
 
 1. Import NGUI before use.
 
