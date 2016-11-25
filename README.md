@@ -1,5 +1,5 @@
 
-## Hello, world! Make a good game :)
+## Make a good game :)
 
 
 ![](/Screen.png) ![](/Hierarchy.png)
