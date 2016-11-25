@@ -11,9 +11,9 @@
 
 3. Modify NGUI **UIScrollView.cs** , add **virtual** keyword to **Press** and **RestrictWithinBounds** void like below.
 
-> public virtual void Press (bool pressed)
+	> public virtual void Press (bool pressed)
 
-	public virtual bool RestrictWithinBounds (bool instant, bool horizontal, bool vertical)
+	> public virtual bool RestrictWithinBounds (bool instant, bool horizontal, bool vertical)
     
 4. Open **TestScene** and play it!
 
