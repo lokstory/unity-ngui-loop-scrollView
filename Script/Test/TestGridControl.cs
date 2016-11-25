@@ -28,9 +28,34 @@ public class TestGridControl : VerticalLoopGridControl
         SetData(TestDataList, true);
     }
 
+    /// <summary>
+    /// 更新資料
+    /// </summary>
     public void UpdateData()
     {
-        TestDataList.Reverse();
-        SetData(TestDataList, false);
+        if (DataList.isNullOrEmpty()) return;
+
+        DataList.Reverse();
+        ResetGrid();
+    }
+
+    /// <summary>
+    /// 新增資料
+    /// </summary>
+    public void AddData()
+    {
+        DataList.Add(TestDataList[Random.Range(0, TestDataList.Count)]);
+        RefreshGrid();
+    }
+
+    /// <summary>
+    /// 刪除資料
+    /// </summary>
+    public void DeleteData()
+    {
+        if (DataList.isNullOrEmpty()) return;
+
+        DataList.RemoveAt(DataList.Count - 1);
+        RefreshGrid();
     }
 }
