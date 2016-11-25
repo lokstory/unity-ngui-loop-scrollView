@@ -1,7 +1,7 @@
 
 ## Hello, world!
 
-![]({{site.baseurl}}/Capture.png)
+![](/Capture.png)
 
 1. Import NGUI before use.
 
