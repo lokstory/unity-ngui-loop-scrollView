@@ -1,9 +1,9 @@
 
-## Hello, world!
+## Hello, world! Make a good game :)
 
 ![](/Screen.png) ![](/Hierarchy.png)
 
-## Demo
+## Quick Start
 
 1. Import [**NGUI**](https://www.assetstore.unity3d.com/en/#!/content/2413) before use.
 
@@ -18,4 +18,12 @@
 4. Open **TestScene** and play it!
 
 
-### Make a good game :)
+## Summary
+
+1. Use **LoopScrollView.cs** instead of **UIScrollView.cs**.
+
+2. Set **UIGrid** position top and center horizontal　**↑** for **vertical** scroll view, 
+	left and center vertical **←** for **horizontal** scroll view.
+    
+3. Your custom **controller** must **inherit** VerticalLoopGridControl or HorizontalLoopGridControl.
+	Don't forget **drag** components to **inspector** and set prefab **path**.
